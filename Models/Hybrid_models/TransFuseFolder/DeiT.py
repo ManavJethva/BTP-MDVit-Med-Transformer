@@ -190,7 +190,7 @@ if __name__ == '__main__':
     x = torch.randn(5,3,256,256)
     domain_label = torch.randint(0,4,(5,))
     domain_label = torch.nn.functional.one_hot(domain_label, 4).float()
-    net = deit_small_patch16_224_adapt(pretrained=False, num_domains=4, pretrained_folder='/bigdata/siyiplace/data/skin_lesion')
+    net = deit_small_patch16_224_adapt(pretrained=False, num_domains=4, pretrained_folder='/kaggle/input/isic-2018-skin-lesion')
     # net = deit_small_patch16_224(pretrained=True, pretrained_folder='/bigdata/siyiplace/data/skin_lesion')
     # print(net.state_dict().keys())
     # net = deit_small_patch16_224(pretrained=True, pretrained_folder='/bigdata/siyiplace/data/skin_lesion')
