@@ -27,7 +27,7 @@ def norm01(x):
 
 
 def Dataset_wrap_csv(k_fold='No', use_old_split=True, img_size=384, dataset_name='isic2018', split_ratio=[0.8, 0.2], train_aug=False,
-    data_folder='/bigdata/siyiplace/data/skin_lesion'):
+    data_folder='/kaggle/working/MDViT/data/skin_lesion'):
     '''
     use train val test csv to load the whole datasets in order to include domain (dataset) label
     if k_fold is a number, means we use k-fold to do experiments, load k_fold index data. default 5 folders
@@ -118,7 +118,7 @@ def Dataset_wrap_csv(k_fold='No', use_old_split=True, img_size=384, dataset_name
 
 class SkinDataset_csv(torch.utils.data.Dataset):
     def __init__(self, dataset_name, img_size, df, use_aug=False,  
-        data_path='/bigdata/siyiplace/data/skin_lesion/isic2018/'):
+        data_path='/kaggle/working/MDViT/data'):
         super(SkinDataset_csv, self).__init__()
         
         self.dataset_name = dataset_name
@@ -198,7 +198,7 @@ class SkinClasDataset(torch.utils.data.Dataset):
     used for generate tsne
     '''
     def __init__(self, dataset_name, img_size,  
-        data_folder='/bigdata/siyiplace/data/skin_lesion'):
+        data_folder='/kaggle/working/MDViT/data'):
         super(SkinClasDataset, self).__init__()
         
         self.dataset_name = dataset_name
